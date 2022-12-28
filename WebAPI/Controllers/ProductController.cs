@@ -7,17 +7,29 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryController : ControllerBase
+    public class ProductController : ControllerBase
     {
-        ICategoryService _categoryService;
-        public CategoryController(ICategoryService categoryService)
+        IProductService _productService;
+
+        public ProductController(IProductService productService)
         {
-           _categoryService = categoryService;
+            _productService = productService;
         }
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            var result = _categoryService.GetAll();
+            var result = _productService.GetAll();
+            if (result.Succes)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("GetAllByCategoryId")]
+        public IActionResult GetAllByCategoryId(int Id)
+        {
+            var result = _productService.GetAllByCategoryId(Id);
             if(result.Succes)
             {
                 return Ok(result);
@@ -25,19 +37,9 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
         [HttpPost("Add")]
-        public IActionResult Add(Category category)
+        public IActionResult Add(Product product)
         {
-            var result=_categoryService.Add(category);
-            if(result.Succes)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-        [HttpPost("Update")]
-        public IActionResult Update(Category category)
-        {
-            var result = _categoryService.Update(category);
+            var result = _productService.Add(product);
             if (result.Succes)
             {
                 return Ok(result);
