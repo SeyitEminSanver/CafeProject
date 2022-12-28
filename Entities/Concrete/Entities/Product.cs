@@ -7,13 +7,16 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete.Entities
 {
-    public class Product:IEntity
+    public class Product : IEntity
     {
         public int ProductId { get; set; }
         public int CategoryId { get; set; }
-        public float Price { get; set; }
-        public string Amount { get; set; }//miktar
+        public string ProductName { get; set; }
+
+        public int Price { get; set; }
+
         public int Stock { get; set; }
-        public float PrepareTime { get; set; }
+        public int PrepareTime { get; set; }
+
     }
 }
