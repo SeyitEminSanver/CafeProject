@@ -32,5 +32,11 @@ namespace Business.Concrete
         {
             return new SuccesDataResult<List<Order>>(_orderDal.GetAll(), Message.ProductsListed);
         }
+
+        public IResult Update(Order order)
+        {
+            _orderDal.Update(order);
+            return new SuccessResult(Message.OrderUpdated);
+        }
     }
 }

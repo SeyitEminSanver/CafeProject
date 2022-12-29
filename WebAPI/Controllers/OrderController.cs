@@ -37,5 +37,15 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+        [HttpPost("Update")]
+        public IActionResult Update(Order order)
+        {
+            var result = _orderService.Update(order);
+            if (result.Succes)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }

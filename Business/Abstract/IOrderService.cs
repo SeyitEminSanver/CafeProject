@@ -12,5 +12,6 @@ namespace Business.Abstract
     {
         IDataResult<List<Order>> GetAll();
         IResult Add(Order order);
+        IResult Update(Order order);
     }
 }
