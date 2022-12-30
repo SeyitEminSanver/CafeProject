@@ -9,7 +9,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        IProductService _productService;
+        private readonly IProductService _productService;
 
         public ProductController(IProductService productService)
         {

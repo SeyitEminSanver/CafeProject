@@ -12,4 +12,4 @@ namespace Entities.Concrete.Entities
         public int TableId { get; set; }
         public bool Status { get; set; }
     }
-}
+} 

@@ -7,30 +7,29 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrderController : ControllerBase
+    public class TableController : ControllerBase
     {
-        private readonly IOrderService _orderService;
+        private readonly ITableService _tableService;
 
-        public OrderController(IOrderService orderService)
+        public TableController(ITableService tableService)
         {
-            _orderService = orderService;
+            _tableService = tableService;
         }
 
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            var result = _orderService.GetAll();
-            if(result.Succes)
+            var result = _tableService.GetAll();
+            if (result.Succes)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
-        
         [HttpPost("Add")]
-        public IActionResult Add(Order order)
+        public IActionResult Add(Table table)
         {
-            var result = _orderService.Add(order);
+            var result = _tableService.Add(table);
             if (result.Succes)
             {
                 return Ok(result);
@@ -38,14 +37,15 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
         [HttpPost("Update")]
-        public IActionResult Update(Order order)
+        public IActionResult Update(Table table)
         {
-            var result = _orderService.Update(order);
+            var result = _tableService.Update(table);
             if (result.Succes)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
+
     }
 }
