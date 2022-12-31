@@ -1,4 +1,5 @@
 ﻿using Core.Utilities.Results.Abstract;
+using Entities.Concrete.Dto;
 using Entities.Concrete.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,5 +14,6 @@ namespace Business.Abstract
         IDataResult<List<Order>> GetAll();
         IResult Add(Order order);
         IResult Update(Order order);
+        IDataResult<List<OrderDetails>> GetOrderDetails();
     }
 }

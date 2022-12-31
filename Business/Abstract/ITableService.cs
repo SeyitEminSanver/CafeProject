@@ -1,4 +1,5 @@
 ﻿using Core.Utilities.Results.Abstract;
+using Entities.Concrete.Dto;
 using Entities.Concrete.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,5 +16,9 @@ namespace Business.Abstract
         IDataResult<List<Table>> GetAll();
 
         IResult Update(Table table);
+        
+        IResult Delete(Table table);    
+
+       
     }
 }

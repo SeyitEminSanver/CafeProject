@@ -1,4 +1,5 @@
 ﻿using Core.DataAcces;
+using Entities.Concrete.Dto;
 using Entities.Concrete.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,5 +11,6 @@ namespace DataAcces.Abstract
 {
     public interface IOrderDal:IEntityRepository<Order>
     {
+        List<OrderDetails> GetOrderDetails();
     }
 }

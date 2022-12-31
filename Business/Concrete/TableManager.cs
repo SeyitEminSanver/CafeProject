@@ -19,6 +19,11 @@ namespace Business.Concrete
         {
             _tableDal = tableDal;
         }
+        public IResult Delete(Table table)
+        {
+            _tableDal.Delete(table);
+            return new SuccessResult();
+        }
 
         public IResult Add(Table table)
         {

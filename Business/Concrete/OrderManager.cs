@@ -4,6 +4,7 @@ using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAcces.Abstract;
 using DataAcces.Concrete.EntityFramework;
+using Entities.Concrete.Dto;
 using Entities.Concrete.Entities;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,11 @@ namespace Business.Concrete
         public IDataResult<List<Order>> GetAll()
         {
             return new SuccesDataResult<List<Order>>(_orderDal.GetAll(), Message.ProductsListed);
+        }
+
+        public IDataResult<List<OrderDetails>> GetOrderDetails()
+        {
+            return new SuccesDataResult<List<OrderDetails>>(_orderDal.GetOrderDetails(), Message.GetOrderDetails);
         }
 
         public IResult Update(Order order)

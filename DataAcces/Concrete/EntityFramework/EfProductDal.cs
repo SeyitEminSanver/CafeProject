@@ -11,5 +11,6 @@ namespace DataAcces.Concrete.EntityFramework
 {
     public class EfProductDal:EfEntityRepositoryBase<Product,DbCafeContext>,IProductDal
     {
+     
     }
 }
