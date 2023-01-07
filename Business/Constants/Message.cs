@@ -19,5 +19,6 @@ namespace Business.Constants
         internal static string ProductNameAlreadyExist;
         internal static string OrderUpdated;
         internal static string GetOrderDetails;
+        internal static string ProductDeleted;
     }
 }

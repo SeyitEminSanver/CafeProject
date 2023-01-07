@@ -38,6 +38,12 @@ namespace Business.Concrete
             return new SuccessResult(Message.ProductAdded);
         }
 
+        public IResult Delete(Product product)
+        {
+          _productDal.Delete(product);
+
+            return new SuccessResult(Message.ProductDeleted);
+        }
 
         public IDataResult<List<Product>> GetAll()
         {
